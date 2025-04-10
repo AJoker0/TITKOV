@@ -24,7 +24,7 @@ Please use the following list to verify each part of the task:
 |  Jenkins success screenshot      | `Exam_SEQA/Jenkins console Titkov.jpg`           |
 |  Jenkins build execution view    | `Exam_SEQA/Jenkins execute Titkov.jpg`           |
 |  ZAP scan result (HTML report)   | `Exam_SEQA/ZAP by Checkmarx Scanning Report Titkov.htm` |
-| ZAP GUI screenshot              | `Exam_SEQA/ZAP Gruyere Screenshot.png`           |
+| ZAP GUI screenshot              | `Exam_SEQA/ZAP Gruyere Screenshot.jpg`           |
 
 ---
 
