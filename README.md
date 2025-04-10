@@ -1,20 +1,45 @@
-# SEQA Exam — Selenium Test + Jenkins CI
+# SEQA Exam — Selenium Test + Jenkins CI + ZAP PenTest
 
-## Description
-This project contains an automated test to check the page: 
-`https://the-internet.herokuapp.com/challenging_dom`
+## 📌 Description
+This repository contains the solution for the SEQA exam.
 
-The test is implemented using:
-- **Python + pytest**
-- **Selenium WebDriver (Firefox + geckodriver)**
-- **Jenkins CI**
+The project tests this target:  
+👉 [`https://the-internet.herokuapp.com/challenging_dom`](https://the-internet.herokuapp.com/challenging_dom)
 
-## What the test checks:
-- The presence of 3 buttons (by color)
-- The presence of a table with 10 rows and correct headers
-- The presence of the `<canvas>` element and its screenshot creation
-- Screenshots are saved at each stage (page, buttons, final)
+It covers:
+- Selenium testing
+- Jenkins CI integration
+- OWASP ZAP-based penetration testing of Gruyere
 
-## How to run
+---
+
+## ✅ What to Check (For Examiner)
+
+Please use the following list to verify each part of the task:
+
+| ✅ Task                             | 📂 Location in Repository                         |
+|------------------------------------|--------------------------------------------------|
+| ✔️ Selenium test code              | `Exam_SEQA/test_challenging_dom_firefox.py`      |
+| ✔️ Screenshots from test           | `Exam_SEQA/01_page_loaded.png`, ..., `04_final.png` |
+| ✔️ Jenkins success screenshot      | `Exam_SEQA/Jenkins console Titkov.jpg`           |
+| ✔️ Jenkins build execution view    | `Exam_SEQA/Jenkins execute Titkov.jpg`           |
+| ✔️ ZAP scan result (HTML report)   | `Exam_SEQA/ZAP by Checkmarx Scanning Report Titkov.htm` |
+| ✔️ ZAP GUI screenshot              | `Exam_SEQA/ZAP Gruyere Screenshot.png`           |
+
+---
+
+## 🧪 Selenium Test — What it Verifies
+
+- 3 UI Buttons are visible (blue, red, green)
+- Table has 10 rows and correct headers
+- `<canvas>` is present and screenshot taken
+- Screenshots are saved on each step
+
+---
+
+## ▶️ How to Run the Test
+
+You can run the test using:
+
 ```bash
 pytest test_challenging_dom_firefox.py
