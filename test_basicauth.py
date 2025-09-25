@@ -5,8 +5,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.alert import Alert
 from selenium.common.exceptions import NoAlertPresentException, NoSuchElementException
-
-GECKODRIVER_PATH = r"C:\Users\andri\Desktop\первый урок джавы\SEQA\geckodriver.exe"
+from webdriver_manager.firefox import GeckoDriverManager
 
 # 🔹 Данные для аутентификации
 CRED = dict(admin="admin", wrong42="A22")
@@ -15,7 +14,8 @@ class TestBasicAuth(unittest.TestCase):
 
     def setUp(self):
         """ Настройка WebDriver перед тестами (Firefox) """
-        self.driver = webdriver.Firefox()
+        service = Service(GeckoDriverManager().install())
+        self.driver = webdriver.Firefox(service=service)
 
     def test_basic_auth_correct_credentials(self):
         """ ✅ Тест с правильными данными (должен пройти) """
@@ -58,7 +58,7 @@ class TestBasicAuth(unittest.TestCase):
         self.url = "https://the-internet.herokuapp.com/basic_auth"
         self.driver.get(self.url)
         driver = self.driver
-
+        #interesting metrics_analyzer.py
         # 🔹 Проверяем, появилось ли всплывающее окно (Alert)
         try:
             alert = Alert(driver)
